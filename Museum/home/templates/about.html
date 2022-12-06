@@ -1,0 +1,86 @@
+
+{%load static  %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Museum:About Us</title>
+
+        <!-- Bootstrap 5 CDN Links -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom File's Link -->
+    {% comment %} <link rel="stylesheet" href="{% static 'css/index.css' %}" {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"
+</head>
+<body>
+    <header class="header_wrapper">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                  
+                    {% if user.is_authenticated  %}
+                    <li class="nav-item">
+                        <a class="nav-link">Hello,{{user.username}}</a>
+                    </li>
+                    {%endif%}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-stream navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu-navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                        {% if user.is_authenticated  %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                      
+                        {%else%}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/log">Login</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Signup</a>
+                        </li>
+                        {%endif%}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% comment %} <h1>Hello<h1> {% endcomment %}
+            <div class="col-sm-3 card" id="hello">
+                <h2>About Us<h2>
+        <div class="card container">
+          <img class="card-img-top" src="{%static 'images/8.jpg'%}" alt="Card image cap"> 
+            <div class="card-body">
+                
+              <p class="card-text">A museum is a building or institution that cares for and displays a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary. The largest museums are located in major cities throughout the world, while thousands of local museums exist in smaller cities, towns, and rural areas.</p>
+              
+            </div> 
+      
+        </div>  
+      
+</body>
+</html>
+
